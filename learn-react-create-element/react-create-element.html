@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReactJs</title>
+    <script crossorigin src="https://unpkg.com/react@17.0.0/umd/react.production.min.js"></script>
+
+</head>
+<body>
+
+
+    <script>
+        // BÀI 1
+        // c1: DOM
+        const h1DOM = document.createElement('h1');
+
+        h1DOM.title = 'Hello';
+        h1DOM.className = 'heading';
+        h1DOM.innerText = 'Hello, guys';
+
+        document.body.appendChild(h1DOM);
+
+        // C2: React
+
+        // React.creatElement(type, props, children, n)
+
+        const h1REACT = React.createElement('h1', {
+            title: 'Hello',
+            className: 'heading',
+        }, 'Hello, guys!');
+
+
+
+        // Bài 2:
+        // C1: DOM
+
+        const ulDOM = document.createElement('ul');
+        ulDOM.style = 'color: red; font-size:30px';
+        const liDOM1 = document.createElement('li');
+        liDOM1.innerText = 'JavaScript';
+        const liDOM2 = document.createElement('li');
+        liDOM2.innerText = 'ReactJS';
+        ulDOM.appendChild(liDOM1);
+        ulDOM.appendChild(liDOM2);
+        document.body.appendChild(ulDOM);
+
+        // C2: Reacts
+
+        const ulREACT = React.createElement(
+            'ul',
+            {
+                id: 'hello',
+                style: 'color: red; font-size:30px'
+            },
+            React.createElement('li', null, 'JavaScript'),
+            React.createElement('li', null, 'ReactJS')
+        )
+
+        console.log(ulREACT);
+    </script>
+</body>
+</html>

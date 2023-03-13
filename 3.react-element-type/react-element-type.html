@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18.0.0/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18.0.0/umd/react-dom.production.min.js"></script> 
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>React Element Type</title>
+</head>
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        const posts =[
+            {
+                img:"https://files.fullstack.edu.vn/f8-prod/blog_posts/6630/63fd6b687b938.jpg",
+                title: "Ngành gì đang hot hiện nay? Top ngành nghề dự báo trở thành xu thế",
+                description: "Nếu bạn đang phân vân trong việc chọn ngành, chuyển ngành thì có thể tham khảo bài viết này để biết ngành gì đang hot hiện nay và...",
+                published: "IT . 4 ngày trước . 7 phút đọc"
+            },
+            {
+                img:"https://files.fullstack.edu.vn/f8-prod/blog_posts/6626/63fc19cf0ecb7.jpg",
+                title:"Lương lập trình website cao hay thấp? Cơ hội nghề nghiệp ra sao?",
+                description:"Trong những năm gần đây, nghề IT đã trở thành một nghề siêu hot với mức thu nhập được cho là “cực khủng”. Vậy với ngách lập...",
+                published:"Lập trình viên . 5 ngày trước . 6 phút đọc"       
+            },
+            {
+                img:"https://files.fullstack.edu.vn/f8-prod/blog_posts/6584/63f81cb512e5f.png",
+                title:"Điểm danh những ngành nghề thu nhập cao nhất hiện nay",
+                description:"Bạn có bao giờ thắc mắc rằng không biết hiện nay ngành nghề nào có thu nhập cao nhất không? Cùng xem nhé! (Thông tin mang tính...",
+                published:"IT . 8 ngày trước . 5 phút đọc"
+            },
+        ]
+
+        function PostItem() {
+            return (
+                <div className="post-items">
+                    { posts.map((post, index) => <React.Fragment>
+                        <img scr={post.img} alt={post.title}/>
+                        <h2 className="post-title">{post.title}</h2>
+                        <p className="post-desc">{post.description}</p>
+                        <p className="post-published">{post.published}</p>
+                        </React.Fragment>
+                    ) }
+                </div>
+
+            )
+        }
+
+        const app = (
+            <div className="post-lists">
+                <PostItem />
+            </div>
+        )
+
+        ReactDOM.render(app, document.getElementById("root"))
+    </script>
+</body>
+</html>
